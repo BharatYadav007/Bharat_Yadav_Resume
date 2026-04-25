@@ -19,7 +19,11 @@ jobs:
         uses: xu-cheng/latex-action@v4
         with:
           root_file: bharat_yadav_resume.tex
-          output: dist/
+
+      - name: Prepare build directory
+        run: |
+          mkdir -p dist
+          cp bharat_yadav_resume.pdf dist/Bharat_Yadav_Resume.pdf
 
       - name: Push PDF to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
