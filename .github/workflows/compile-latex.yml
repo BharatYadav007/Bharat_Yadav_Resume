@@ -20,15 +20,15 @@ jobs:
         with:
           root_file: bharat_yadav_resume.tex
 
-      - name: Prepare build directory
+      - name: Prepare output directory
         run: |
-          mkdir -p dist
-          cp bharat_yadav_resume.pdf dist/Bharat_Yadav_Resume.pdf
+          mkdir -p output_pdf
+          cp bharat_yadav_resume.pdf output_pdf/Bharat_Yadav_Resume.pdf
 
       - name: Push PDF to the output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: crazy-max/ghaction-github-pages@v5.0.0
         with:
           target_branch: output_pdf
-          build_dir: dist
+          build_dir: output_pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
